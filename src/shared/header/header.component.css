@@ -1,0 +1,28 @@
+.search__box {
+    width: 45%;
+    position: relative;
+    left: 25%;
+    top: 15px;
+    border: none;
+    background-color: #e8eaed;
+    /* outline: none; */
+}
+
+.logo {
+    position: absolute;
+    top: 10px;
+    left: 5%;
+    cursor: pointer;
+}
+
+.profile__pic {
+    position: absolute;
+    right: 5%;
+    top: 15px;
+    cursor: pointer;
+}
+
+::placeholder {
+    color: #3c4043;
+    opacity: 0.3;
+}
