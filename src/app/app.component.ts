@@ -1,5 +1,5 @@
 import { Component, ElementRef, HostListener, ViewChild } from '@angular/core';
-import {Notes} from '../shared/models/notes';
+import { NgbModalConfig, NgbModal } from '@ng-bootstrap/ng-bootstrap';
 
 
 @Component({
@@ -8,43 +8,38 @@ import {Notes} from '../shared/models/notes';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'notesApp';
-  public editorBody: boolean = true;
-  public sampleEditor: boolean = false;
-  public placement: string = 'top';
-  public notes = new Notes();
-  @ViewChild('titleContent') titleContent: ElementRef | undefined;
-  @ViewChild('bodyContent') bodyContent: ElementRef | undefined;
-  public notesList:any; 
+  public editorBody: boolean = false;
+  public sampleEditor: boolean = true;
+  public notesList: any;
+  modalReference: any;
+  public focused: boolean = false;
+  public selectedNoteIndex: any;
+  public selectedNote: any;
 
-  @HostListener('document:keydown', ['$event']) onKeydownHandler(event: KeyboardEvent) {
-    if (event.key === 'Escape' && this.editorBody === true && this.sampleEditor === false) {
-      this.saveAndCloseEditor()
-    }
-  }
-
-  constructor() { 
+  constructor(private config: NgbModalConfig, private modalService: NgbModal) {
+    config.keyboard = true;
+    config.animation = false;
     this.notesList = [{
-      title:'First Title',
-      body:"helo there this is niam . sdfsddddddddddddddggggg\ngggggggggggggggggggggggggggggggggggggggggggggggdddddddddddddddddddd\ndddddddddd\ndddddddddddddddd\nddddddddddddddd\f\f\n\f\f\f\\n\n\n\n\n\\n\njjjjjjjjjjjjjjjjjjjjjjjjjjjj\n123\n\n\nnew line\n\n\n....'.'\n\n\none more new line !!",
+      title: 'First Title',
+      body: "helo there this is niam . sdfsddddddddddddddggggg\ngggggggggggggggggggggggggggggggggggggggggggggggdddddddddddddddddddd\ndddddddddd\ndddddddddddddddd\nddddddddddddddd\f\f\n\f\f\f\\n\n\n\n\n\\n\njjjjjjjjjjjjjjjjjjjjjjjjjjjj\n123\n\n\nnew line\n\n\n....'.'\n\n\none more new line !!",
       createdAt: new Date(),
       updatedAt: new Date(),
-      color:'red',
-      reminder:'',
-      labelName:'Testing'
+      color: 'red',
+      reminder: '',
+      labelName: 'Testing'
     },
     {
-      title:'Second Title',
-      body:"hello",
+      title: 'Second Title',
+      body: "hello",
       createdAt: new Date(),
       updatedAt: new Date(),
-      color:'red',
-      reminder:'',
-      labelName:'Testing'
+      color: 'red',
+      reminder: '',
+      labelName: 'Testing'
     },
     {
-      title:'Third Title',
-      body:`Laptop pass : N9zam9@54321
+      title: 'Third Title',
+      body: `Laptop pass : N9zam9@54321
       Bitlocker pin : 147258369
       
       Employee id marsh : 1235396
@@ -60,31 +55,31 @@ export class AppComponent {
       Sudexo pass : Nizam@123`,
       createdAt: new Date(),
       updatedAt: new Date(),
-      color:'green',
-      reminder:'',
-      labelName:'Testing'
+      color: 'green',
+      reminder: '',
+      labelName: 'Testing'
     },
     {
-      title:'First Title',
-      body:"helo there this is niam . sdfsdddddddddddddd\n\n\n123\n\n\nnew line\n\n\n....'.'\n\n\none more new line !!",
+      title: 'First Title',
+      body: "helo there this is niam . sdfsdddddddddddddd\n\n\n123\n\n\nnew line\n\n\n....'.'\n\n\none more new line !!",
       createdAt: new Date(),
       updatedAt: new Date(),
-      color:'red',
-      reminder:'',
-      labelName:'Testing'
+      color: 'red',
+      reminder: '',
+      labelName: 'Testing'
     },
     {
-      title:'Second Title',
-      body:"helo\n\n\n123\n\n\nnew line\n\n\n....'.'\n\n\none more new line !!",
+      title: 'Second Title',
+      body: "helo\n\n\n123\n\n\nnew line\n\n\n....'.'\n\n\none more new line !!",
       createdAt: new Date(),
       updatedAt: new Date(),
-      color:'red',
-      reminder:'',
-      labelName:'Testing'
+      color: 'red',
+      reminder: '',
+      labelName: 'Testing'
     },
     {
-      title:'Third Title',
-      body:`Laptop pass : N9zam9@54321
+      title: 'Third Title',
+      body: `Laptop pass : N9zam9@54321
       Bitlocker pin : 147258369
       
       Employee id marsh : 1235396
@@ -100,12 +95,12 @@ export class AppComponent {
       Sudexo pass : Nizam@123`,
       createdAt: new Date(),
       updatedAt: new Date(),
-      color:'green',
-      reminder:'',
-      labelName:'Testing'
+      color: 'green',
+      reminder: '',
+      labelName: 'Testing'
     }, {
-      title:'Third Title',
-      body:`Laptop pass : N9zam9@54321
+      title: 'Third Title',
+      body: `Laptop pass : N9zam9@54321
       Bitlocker pin : 147258369
       
       Employee id marsh : 1235396
@@ -121,21 +116,21 @@ export class AppComponent {
       Sudexo pass : Nizam@123`,
       createdAt: new Date(),
       updatedAt: new Date(),
-      color:'green',
-      reminder:'',
-      labelName:'Testing'
+      color: 'green',
+      reminder: '',
+      labelName: 'Testing'
     },
     {
-      title:'Second Title',
-      body:"helo\n\n\n123\n\n\nnew line\n\n\n....'.'\n\n\none more new line !!",
+      title: 'Second Title',
+      body: "helo\n\n\n123\n\n\nnew line\n\n\n....'.'\n\n\none more new line !!",
       createdAt: new Date(),
       updatedAt: new Date(),
-      color:'red',
-      reminder:'',
-      labelName:'Testing'
+      color: 'red',
+      reminder: '',
+      labelName: 'Testing'
     }, {
-      title:'Third Title',
-      body:`Laptop pass : N9zam9@54321
+      title: 'Third Title',
+      body: `Laptop pass : N9zam9@54321
       Bitlocker pin : 147258369
       
       Employee id marsh : 1235396
@@ -151,11 +146,11 @@ export class AppComponent {
       Sudexo pass : Nizam@123`,
       createdAt: new Date(),
       updatedAt: new Date(),
-      color:'green',
-      reminder:'',
-      labelName:'Testing'
+      color: 'green',
+      reminder: '',
+      labelName: 'Testing'
     },
-  ]
+    ]
   }
 
   openEditor() {
@@ -163,16 +158,46 @@ export class AppComponent {
     this.sampleEditor = false;
   }
 
-  saveAndCloseEditor() {
-    this.editorBody = false;
-    this.sampleEditor = true;
-    console.log(this.titleContent?.nativeElement.innerText, '111111111111111111');
-    console.log(this.bodyContent?.nativeElement.innerText, '2222222222222222');
-    this.notes.title = this.titleContent?.nativeElement.innerText;
-    this.notes.body = this.bodyContent?.nativeElement.innerText;
-    this.notes.createdAt = new Date();
-    this.notes.updatedAt = new Date;
-    this.notes.color = 'none';
-    console.log(this.notes , 'this.notes')
+  notesEditor(content: any, index: number, notes: any) {
+    this.selectedNote = notes;
+    this.focused = true;
+    this.selectedNoteIndex = index;
+    this.modalReference = this.modalService.open(content, { windowClass: 'modal-holder' });
+    this.modalReference.result.then((result: any) => {
+      // this.editorClosed();
+    }, (reason: any) => {
+      this.editorClosed(null, 'popup');
+    });
   }
+
+  saveOrUpdateNotes(e: any, action: any) {
+    console.log(e, 'eeeeeeeeeeeeeeeeeeeeeeee', action);
+    if (action === 'save') {
+      if (e && (e.title || e.body)) {
+        this.notesList.push(e);
+        // this.notesList.reverse();
+      }
+    } else if (action === 'update') {
+
+    }
+  }
+
+  editorClosed(e?: any, from?: String) {
+    this.focused = false;
+    if (from === 'popup') {
+      return;
+    }
+    
+    console.log(e);
+
+    if (from === 'notes') {
+      this.modalService.dismissAll();
+      this.focused = false;
+    } else {
+      this.editorBody = e?.editorBody;
+      this.sampleEditor = e?.sampleEditor;
+    }
+  }
+
+
 }

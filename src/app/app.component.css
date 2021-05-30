@@ -24,18 +24,6 @@
     overflow: auto;
 }
 
-.editor {
-    position: relative;
-    left: 25%;
-    top: 20px;
-    background-color: #fff;
-    width: 45%;
-    min-height: 50px;
-    border: none;
-    outline: none;
-    padding-top: 10px;
-}
-
 .sample__editor input {
     position: relative;
     left: 25%;
@@ -48,111 +36,54 @@
     font-size: 16px;
 }
 
-.editor__head {
-    border-radius: 10px 10px 0 0;
-    text-indent: 8px;
-    box-shadow: 0 0 10px rgb(233, 231, 231);
-}
-
-.editor__body {
-    padding-bottom: 10px;
-    text-indent: 8px;
-    box-shadow: 0 0 10px rgb(233, 231, 231);
-}
-
-ul {
-    padding-left: 0;
-    text-indent: 8px;
-}
-
-.editor__foot {
-    border-radius: 0 0 10px 10px;
-    box-shadow: 0 0 10px rgb(233, 231, 231);
-}
-
-.editor__foot ul li {
-    display: inline-block;
-}
-
-ul li a {
-    cursor: pointer;
-}
-
-ul li {
-    padding-right: 15px;
-}
-
-ul li svg {
-    cursor: pointer;
-}
-
-ul li:last-child {
-    /* position: absolute; */
-    /* right: 35px;
-    bottom: 15px; */
-    color: lightblue;
-    /* text-decoration: underline; */
-}
-
-.editor:empty:before {
-    content: attr(data-placeholder);
-}
-
-[data-placeholder] {
-    color: rgba(0, 0, 0, 0.5);
-}
-
-.editor__head {
-    font-size: 22px;
-    font-weight: 400;
-}
-
 ::placeholder {
     color: rgba(0, 0, 0, 0.5);
+}
+
+.editor__block {
+    position: relative;
+    left: 25%;
+    top: 20px;
+    background-color: #fff;
+    width: 45%;
+    min-height: 50px;
+    border: none;
+    outline: none;
+    padding-top: 10px;
 }
 
 .docket {
     position: relative;
     top: 5%;
     margin-left: 30px;
-    /* background-color: lightgreen; */
     height: auto;
-    /* min-width: 400px; */
-    /* width: 80%; */
-    /* display: grid;
-    grid-auto-flow: column; */
 }
 
-.section {
-    /* border: 1px solid rgb(218, 215, 215);
-    border-radius: 10px;
-    padding: 20px;
-    margin: 20px;
-    white-space: pre-wrap; */
+.notes__section {
+    white-space: pre-wrap;
     background: #fff;
-    border-radius: 2px;
-    box-shadow: 0 2px 5px #ccc;
+    border-radius: 10px;
+    border: 1px solid rgb(197, 196, 196);
+    /* box-shadow: 0 2px 5px #ccc; */
     padding: 10px;
     width: auto;
     height: auto;
     max-width: 260px;
     margin: 16px;
-    /* float: left; */
+    cursor: auto;
 }
 
-.row {
-    --bs-gutter-x: 0;
-}
-
-.section h1 {
+.notes__section h1 {
     font-size: 1.1em;
     margin-bottom: 6px;
 }
 
-.section pre {
-    /* font-size: 1.1em; */
-    /* margin-bottom: 10px; */
+.notes__section pre {
     white-space: pre-wrap;
     word-wrap: break-word;
     font-family: inherit;
+}
+
+.row {
+    --bs-gutter-x: 0;
 }

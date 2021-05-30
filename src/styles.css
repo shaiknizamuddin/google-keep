@@ -6,3 +6,19 @@
     box-sizing: content-box;
     color: rgba(0, 0, 0, 0.5);
 }
+
+.modal-holder {
+    animation-name: example;
+    animation-duration: 0.4s;
+    position: absolute;
+    top: 3%;
+}
+
+@keyframes example {
+    0% {
+        transform: scale(0.9)
+    }
+    100% {
+        transform: scale(1)
+    }
+}

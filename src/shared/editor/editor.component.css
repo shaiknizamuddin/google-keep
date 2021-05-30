@@ -1,0 +1,87 @@
+.editor {
+    position: relative;
+    left: 25%;
+    top: 20px;
+    background-color: #fff;
+    width: 45%;
+    min-height: 50px;
+    border: none;
+    outline: none;
+    padding-top: 10px;
+}
+
+.sec__editor {
+    position: relative;
+    background-color: #fff;
+    min-height: 50px;
+    border: none;
+    outline: none;
+    padding-top: 10px;
+}
+
+.editor__head {
+    border-radius: 10px 10px 0 0;
+    text-indent: 8px;
+    box-shadow: 0 0 10px rgb(233, 231, 231);
+    font-size: 22px;
+    font-weight: 400;
+}
+
+.bodyScroll {
+    overflow: auto;
+    height: 300px;
+}
+
+.editor__body {
+    padding-bottom: 10px;
+    text-indent: 8px;
+    box-shadow: 0 0 10px rgb(233, 231, 231);
+    white-space: pre-wrap;
+    padding-left: 15px;
+}
+
+.editor__foot {
+    border-radius: 0 0 10px 10px;
+    box-shadow: 0 0 10px rgb(233, 231, 231);
+}
+
+.editor__foot ul li {
+    display: inline-block;
+}
+
+ul {
+    padding-left: 0;
+    text-indent: 8px;
+}
+
+ul li {
+    padding-right: 15px;
+}
+
+ul li a {
+    cursor: pointer;
+}
+
+ul li svg {
+    cursor: pointer;
+}
+
+ul li:last-child {
+    /* position: absolute; */
+    /* right: 35px;
+    bottom: 15px; */
+    color: blue
+    /* text-decoration: underline; */
+}
+
+.editor:empty:before {
+    content: attr(data-placeholder);
+}
+
+.sec__editor:empty:before {
+    content: attr(data-placeholder);
+}
+
+[data-placeholder] {
+    color: rgba(0, 0, 0, 0.5);
+}
