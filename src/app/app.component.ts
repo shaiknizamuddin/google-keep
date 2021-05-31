@@ -20,7 +20,7 @@ export class AppComponent {
     config.keyboard = true;
     config.animation = false;
     this.notesList = [{
-      title: 'First Title',
+      title: 'myNotes',
       body: "helo there this is niam . sdfsddddddddddddddggggg\ngggggggggggggggggggggggggggggggggggggggggggggggdddddddddddddddddddd\ndddddddddd\ndddddddddddddddd\nddddddddddddddd\f\f\n\f\f\f\\n\n\n\n\n\\n\njjjjjjjjjjjjjjjjjjjjjjjjjjjj\n123\n\n\nnew line\n\n\n....'.'\n\n\none more new line !!",
       createdAt: new Date(),
       updatedAt: new Date(),
