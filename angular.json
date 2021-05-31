@@ -3,7 +3,7 @@
     "version": 1,
     "newProjectRoot": "projects",
     "projects": {
-        "notesApp": {
+        "google-keep": {
             "projectType": "application",
             "schematics": {
                 "@schematics/angular:application": {
@@ -17,7 +17,7 @@
                 "build": {
                     "builder": "@angular-devkit/build-angular:browser",
                     "options": {
-                        "outputPath": "dist/notesApp",
+                        "outputPath": "dist/google-keep",
                         "index": "src/index.html",
                         "main": "src/main.ts",
                         "polyfills": "src/polyfills.ts",
@@ -69,10 +69,10 @@
                     "builder": "@angular-devkit/build-angular:dev-server",
                     "configurations": {
                         "production": {
-                            "browserTarget": "notesApp:build:production"
+                            "browserTarget": "google-keep:build:production"
                         },
                         "development": {
-                            "browserTarget": "notesApp:build:development"
+                            "browserTarget": "google-keep:build:development"
                         }
                     },
                     "defaultConfiguration": "development"
@@ -80,7 +80,7 @@
                 "extract-i18n": {
                     "builder": "@angular-devkit/build-angular:extract-i18n",
                     "options": {
-                        "browserTarget": "notesApp:build"
+                        "browserTarget": "google-keep:build"
                     }
                 },
                 "test": {
@@ -103,5 +103,5 @@
             }
         }
     },
-    "defaultProject": "notesApp"
+    "defaultProject": "google-keep"
 }

@@ -20,16 +20,16 @@ describe('AppComponent', () => {
     expect(app).toBeTruthy();
   });
 
-  it(`should have as title 'notesApp'`, () => {
+  it(`should have as title 'google-keep'`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
-    expect(app.title).toEqual('notesApp');
+    expect(app.title).toEqual('google-keep');
   });
 
   it('should render title', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.nativeElement;
-    expect(compiled.querySelector('.content span').textContent).toContain('notesApp app is running!');
+    expect(compiled.querySelector('.content span').textContent).toContain('google-keep app is running!');
   });
 });
