@@ -7,14 +7,12 @@
 export const environment = {
   production: false,
   firebaseConfig : {
-    apiKey: "AIzaSyCirX3-gGTQMrD-IGyidwUaDjiezFZYR0s0",
-    authDomain: "gogl-keep.firebaseapp.com",
-    databaseURL: "https://gogl-keep-default-rtedb.firebaseio.com",
-    projectId: "gogl-keep",
-    storageBucket: "gogl-keep.applespot.com",
-    messagingSenderId: "855231134385323",
-    appId: "1:855231185323:web:2533343256323429441b4d2ee",
-    measurementId: "G-28V4FNZSSWPZ1"
+    apiKey: "YOUR_API_KEY",
+    authDomain: "YOUR_AUTH_DOMAIN",
+    databaseURL: "YOUR_DATABASE_URL",
+    projectId: "YOUR_PROJECT_ID",
+    storageBucket: "YOUR_STORAGE_BUCKET",
+    messagingSenderId: "YOUR_MESSAGING_SENDER_ID"
   }
 };
 
