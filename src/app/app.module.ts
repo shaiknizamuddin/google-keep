@@ -8,6 +8,10 @@ import { AppComponent } from './app.component';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { SharedModule } from 'src/shared/shared.module';
 
+import { AngularFireModule } from '@angular/fire';
+import { AngularFireDatabaseModule } from '@angular/fire/database';
+import { environment } from '../environments/environment';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -18,7 +22,9 @@ import { SharedModule } from 'src/shared/shared.module';
     BrowserModule,
     AppRoutingModule,
     NgbModule,
-    SharedModule
+    SharedModule,
+    AngularFireModule.initializeApp(environment.firebaseConfig),
+    AngularFireDatabaseModule
   ],
   providers: [],
   bootstrap: [AppComponent]

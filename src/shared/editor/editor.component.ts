@@ -42,8 +42,8 @@ public titleField:any;
   }
 
   ngAfterViewInit() {
-    this.titleContent.nativeElement.value = this.seletedNote.title;
-    this.bodyContent.nativeElement.value = this.seletedNote.body;
+    // this.titleContent.nativeElement.value = this.seletedNote.title;
+    // this.bodyContent.nativeElement.value = this.seletedNote.body;
   }
 
   saveAndCloseEditor() {
@@ -53,6 +53,7 @@ public titleField:any;
     
     this.notes.title = this.titleContent?.nativeElement.innerText;
     this.notes.body = this.bodyContent?.nativeElement.innerText;
+    console.log(this.notes.body , '99999999999999999999999999999999999999999999999999999')
     this.notes.createdAt = new Date();
     this.notes.updatedAt = new Date;
     this.notes.color = 'none';
