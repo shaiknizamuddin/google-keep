@@ -37,28 +37,7 @@ export class AppComponent {
       reminder: '',
       labelName: 'Testing'
     },
-    {
-      title: 'Third Title',
-      body: `Laptop pass : N9zam9@54321
-      Bitlocker pin : 147258369
-      
-      Employee id marsh : 1235396
-      
-      VDI pin : 14725836 (access code) 
-      
-      ADP 
-      Username : nizamuddin.shaik
-      Pass : N9zam9@1
-      
-      Solugenix employee id : SG784
-      
-      Sudexo pass : Nizam@123`,
-      createdAt: new Date(),
-      updatedAt: new Date(),
-      color: 'green',
-      reminder: '',
-      labelName: 'Testing'
-    },
+    
     {
       title: 'First Title',
       body: "helo there this is niam . sdfsdddddddddddddd\n\n\n123\n\n\nnew line\n\n\n....'.'\n\n\none more new line !!",
@@ -77,76 +56,13 @@ export class AppComponent {
       reminder: '',
       labelName: 'Testing'
     },
-    {
-      title: 'Third Title',
-      body: `Laptop pass : N9zam9@54321
-      Bitlocker pin : 147258369
-      
-      Employee id marsh : 1235396
-      
-      VDI pin : 14725836 (access code) 
-      
-      ADP 
-      Username : nizamuddin.shaik
-      Pass : N9zam9@1
-      
-      Solugenix employee id : SG784
-      
-      Sudexo pass : Nizam@123`,
-      createdAt: new Date(),
-      updatedAt: new Date(),
-      color: 'green',
-      reminder: '',
-      labelName: 'Testing'
-    }, {
-      title: 'Third Title',
-      body: `Laptop pass : N9zam9@54321
-      Bitlocker pin : 147258369
-      
-      Employee id marsh : 1235396
-      
-      VDI pin : 14725836 (access code) 
-      
-      ADP 
-      Username : nizamuddin.shaik
-      Pass : N9zam9@1
-      
-      Solugenix employee id : SG784
-      
-      Sudexo pass : Nizam@123`,
-      createdAt: new Date(),
-      updatedAt: new Date(),
-      color: 'green',
-      reminder: '',
-      labelName: 'Testing'
-    },
+   
     {
       title: 'Second Title',
       body: "helo\n\n\n123\n\n\nnew line\n\n\n....'.'\n\n\none more new line !!",
       createdAt: new Date(),
       updatedAt: new Date(),
       color: 'red',
-      reminder: '',
-      labelName: 'Testing'
-    }, {
-      title: 'Third Title',
-      body: `Laptop pass : N9zam9@54321
-      Bitlocker pin : 147258369
-      
-      Employee id marsh : 1235396
-      
-      VDI pin : 14725836 (access code) 
-      
-      ADP 
-      Username : nizamuddin.shaik
-      Pass : N9zam9@1
-      
-      Solugenix employee id : SG784
-      
-      Sudexo pass : Nizam@123`,
-      createdAt: new Date(),
-      updatedAt: new Date(),
-      color: 'green',
       reminder: '',
       labelName: 'Testing'
     },
