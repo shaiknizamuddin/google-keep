@@ -28,70 +28,47 @@ export class AppComponent {
     this.fetchNotesList();
 
     console.log(this.notesList, 'this.notesListthis.notesList')
-    // this.notesList = [{
-    //   title: 'myNotes',
-    //   body: "helo there this is niam . sdfsddddddddddddddggggg\ngggggggggggggggggggggggggggggggggggggggggggggggdddddddddddddddddddd\ndddddddddd\ndddddddddddddddd\nddddddddddddddd\f\f\n\f\f\f\\n\n\n\n\n\\n\njjjjjjjjjjjjjjjjjjjjjjjjjjjj\n123\n\n\nnew line\n\n\n....'.'\n\n\none more new line !!",
-    //   createdAt: new Date(),
-    //   updatedAt: new Date(),
-    //   color: 'red',
-    //   reminder: '',
-    //   labelName: 'Testing'
-    // },
-    // {
-    //   title: 'Second Title',
-    //   body: "hello",
-    //   createdAt: new Date(),
-    //   updatedAt: new Date(),
-    //   color: 'red',
-    //   reminder: '',
-    //   labelName: 'Testing'
-    // },
+    this.notesList = [{
+      title: 'myNotes',
+      body: "helo there this is niam ",
+      createdAt: new Date(),
+      updatedAt: new Date(),
+      color: 'red',
+      reminder: '',
+      labelName: 'Testing'
+    },
+    {
+      title: 'Second Title',
+      body: "hello",
+      createdAt: new Date(),
+      updatedAt: new Date(),
+      color: 'red',
+      reminder: '',
+      labelName: 'Testing'
+    },
 
-    // {
-    //   title: 'First Title',
-    //   body: "helo there this is niam . sdfsdddddddddddddd\n\n\n123\n\n\nnew line\n\n\n....'.'\n\n\none more new line !!",
-    //   createdAt: new Date(),
-    //   updatedAt: new Date(),
-    //   color: 'red',
-    //   reminder: '',
-    //   labelName: 'Testing'
-    // },
-    // {
-    //   title: 'Second Title',
-    //   body: "helo\n\n\n123\n\n\nnew line\n\n\n....'.'\n\n\none more new line !!",
-    //   createdAt: new Date(),
-    //   updatedAt: new Date(),
-    //   color: 'red',
-    //   reminder: '',
-    //   labelName: 'Testing'
-    // },
-
-    // {
-    //   title: 'Second Title',
-    //   body: "helo\n\n\n123\n\n\nnew line\n\n\n....'.'\n\n\none more new line !!",
-    //   createdAt: new Date(),
-    //   updatedAt: new Date(),
-    //   color: 'red',
-    //   reminder: '',
-    //   labelName: 'Testing'
-    // },
-    // ]
+    {
+      title: 'Third',
+      body: "Testing \n \n testing 123",
+      createdAt: new Date(),
+      updatedAt: new Date(),
+      color: 'red',
+      reminder: '',
+      labelName: 'Testing'
+    }
+    ]
   }
 
   fetchNotesList() {
-    let arr = [];
-    let userDoc = this.firestore.firestore.collection(`notes`);
-    userDoc.get().then((querySnapshot) => {
-      querySnapshot.forEach((doc) => {
-        // console.log(doc.id, "=>", doc.data());
-        arr.push({ id: doc.id, ...doc.data() });
-      })
-    })
-    this.notesList = arr;
-    setTimeout(() => {
-      console.log(this.notesList, 'this.notesList++++++++++++++++++');
-    }, 4000);
-
+    // let arr = [];
+    // let userDoc = this.firestore.firestore.collection(`notes`);
+    // userDoc.get().then((querySnapshot) => {
+    //   querySnapshot.forEach((doc) => {
+    //     // console.log(doc.id, "=>", doc.data());
+    //     arr.push({ id: doc.id, ...doc.data() });
+    //   })
+    // })
+    // this.notesList = arr;
   }
 
 
@@ -123,7 +100,6 @@ export class AppComponent {
         // this.notesList.reverse();
       }
     } else if (action === 'update') {
-      console.log(e , '99999999999999999999999999999999999999999999999999999')
 
     }
   }
